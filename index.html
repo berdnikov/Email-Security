@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crypted email</title>
+  </head>
+  <body>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        padding-top: 40px;
+        text-align: center;
+      }
+
+      a {
+        font-size: 40px;
+        margin-bottom: 20px;
+      }
+    </style>
+
+    <a href="mailto:my-email@example.com">
+      My email
+    </a>
+
+    <a
+      href="mailto:my-emailxxx@examplexxx.com"
+      onmouseover="this.href=this.href.replace(/xxx/g,'');"
+    >
+      My email 1
+    </a>
+
+    <a
+      href="#"
+      class="cryptedmail"
+      data-name="my-email"
+      data-domain="example"
+      data-tld="com"
+      onclick="window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld; return false;"
+    >
+      My email 2
+    </a>
+
+    <a
+      href="mailto:&#109;&#121;&#45;&#101;&#109;&#97;&#105;&#108;&#64;&#101;&#120;&#97;&#109;&#112;&#108;&#101;&#46;&#99;&#111;&#109; "
+    >
+      My email 3
+    </a>
+  </body>
+</html>
